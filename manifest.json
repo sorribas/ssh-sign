@@ -1,0 +1,23 @@
+{
+  "name": "SSH Sign",
+  "version": "0.1",
+  "description": "Use your ssh keys to sign messages.",
+	"permissions": ["tabs", "declarativeContent", "storage", "activeTab", "http://*/*", "https://*/*"],
+	"background": {
+		"scripts": ["out/background.js"],
+		"persistent": false
+	},
+	"page_action": {
+		"default_popup": "web/popup.html"
+	},
+
+  "content_scripts": [
+    {
+      "matches": ["*://*/*"],
+      "js": ["web/contentScript.js"],
+      "run_at": "document_start",
+      "all_frames": true
+    }
+  ],
+  "manifest_version": 2
+}

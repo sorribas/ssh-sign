@@ -1,0 +1,25 @@
+{
+  "name": "ssh-sign",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc && browserify out/index.js > web/bundle.js && browserify out/on-page-script.js > web/on-page-script.js && browserify -t brfs out/contentScript.js > web/contentScript.js"
+  },
+  "author": "Eduardo Sorribas",
+  "license": "MIT",
+  "dependencies": {
+    "@types/chrome": "0.0.74",
+    "@types/react": "^16.4.16",
+    "@types/react-dom": "^16.0.9",
+    "jsrsasign": "^8.0.12",
+    "jsrsasign-util": "^1.0.0",
+    "react": "^16.5.2",
+    "react-dom": "^16.5.2"
+  },
+  "devDependencies": {
+    "brfs": "^2.0.1",
+    "browserify": "^16.2.3"
+  }
+}
